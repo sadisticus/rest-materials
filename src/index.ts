@@ -4,7 +4,7 @@ import { handleRest } from './rest';
 
 export interface Env {
     DB: D1Database;
-    SECRET: SecretsStoreSecret;
+    shirley: SecretsStoreSecret;
 }
 
 // # List all users
@@ -37,7 +37,7 @@ export default {
         })
 
         // Secret Store key value that we have set
-        const secret = await env.SECRET.get();
+        const secret = await env.shirley.get();
 
         // Authentication middleware that verifies the Authorization header
         // is sent in on each request and matches the value of our Secret key.
